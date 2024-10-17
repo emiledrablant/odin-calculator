@@ -1,6 +1,24 @@
 let firstNumber;
 let secondNumber;
 let operator;
+let numberDisplayed = 0;
+
+const numerals = document.querySelectorAll(".numeral");
+function bindButtons() {
+    numerals.forEach(element => {
+        element.addEventListener("click", () => displayNumber(element.textContent));
+    });
+}
+
+const screen = document.querySelector(".screen");
+function displayNumber(number) {
+    if (numberDisplayed === 0) {
+        numberDisplayed = number;
+    } else {
+        numberDisplayed += number;
+    }
+    screen.textContent = numberDisplayed;
+}
 
 function operate(operator, first, second) {
     switch (operator) {
@@ -14,8 +32,6 @@ function operate(operator, first, second) {
             return divide(first, second);
     }
 }
-
-console.log(operate("*", 10, 5));
 
 function add(first, second) {
     return first + second;
@@ -32,3 +48,6 @@ function multiply(first, second) {
 function divide(first, second) {
     return first / second;
 }
+
+bindButtons();
+displayNumber(0);
