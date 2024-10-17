@@ -1,3 +1,40 @@
 h1 {
     text-align: center;
 }
+
+.screen {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: right;
+}
+
+.calculator {
+    width: 300px;
+    height: 450px;
+    border: solid 1px black;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.buttons {
+    margin: 5px;
+    display: flex;
+    flex: 1;
+}
+
+button {
+    margin-left: 5px;
+    margin-right: 5px;
+    flex: 1;
+}
+
+.first {
+    margin-bottom: 15px;
+}
+
+.zero {
+    flex-grow: 2;
+}
